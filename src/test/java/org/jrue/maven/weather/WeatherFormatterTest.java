@@ -16,7 +16,7 @@ public class WeatherFormatterTest extends TestCase {
 		InputStream testData = getClass().getClassLoader().getResourceAsStream("ny-weather.xml");
 		Weather weather = new YahooParser().parse(testData);
 		String actualResult = new WeatherFormatter().format(weather);
-		String expectedResult = IOUtils.toString(getClass().getClassLoader().getResourceAsStream("ny-weather.xml"));
+		String expectedResult = IOUtils.toString(getClass().getClassLoader().getResourceAsStream("format-expected.dat"));
 		assertEquals(actualResult.trim(), expectedResult.trim());
 	}
 }
